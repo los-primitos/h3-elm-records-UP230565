@@ -1,17 +1,22 @@
 module Helper exposing (..)
+
 import Html
+
 
 add2 : Int -> Int -> Int
 add2 int1 int2 =
     int1 + int2
 
+
 add3 : Float -> Float -> Float -> Float
 add3 int1 int2 int3 =
     int1 + int2 + int3
 
+
 calc : Int -> Int -> (Int -> Int -> Int) -> Int
 calc int1 int2 fun =
     fun int1 int2
+
 
 langs : List { name : String, releaseYear : Int, currentVersion : String }
 langs =
@@ -25,13 +30,19 @@ langs =
       }
     ]
 
+
+
 --Ejercicio 1
+
 
 languageNames : List { name : String, releaseYear : Int, currentVersion : String } -> List String
 languageNames list =
     List.map .name list
 
+
+
 --Ejercicio 2
+
 
 users : List { name : String, uType : String }
 users =
@@ -42,6 +53,7 @@ users =
       , uType = "Professor"
       }
     ]
+
 
 onlyStudents : List { name : String, uType : String } -> List String
 onlyStudents list =
@@ -55,7 +67,10 @@ onlyStudents list =
         )
         list
 
+
+
 --Ejercicio 3
+
 
 type alias Videogame =
     { title : String
@@ -64,6 +79,7 @@ type alias Videogame =
     , downloads : Int
     , genres : List String
     }
+
 
 videogames : List Videogame
 videogames =
@@ -81,11 +97,15 @@ videogames =
       }
     ]
 
+
 getVideogameGenres : List Videogame -> List (List String)
 getVideogameGenres list =
     List.map .genres list
 
+
+
 --Ejercicio 4
+
 
 type alias Computer =
     { ram : String
@@ -94,9 +114,11 @@ type alias Computer =
     , screenSize : String
     }
 
+
 myLaptop : Computer
 myLaptop =
     { ram = "16", model = "sabe", brand = "Hp", screenSize = "idk" }
+
 
 main : Html.Html msg
 main =
